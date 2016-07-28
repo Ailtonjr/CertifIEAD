@@ -1,4 +1,4 @@
-/*	*
+       /*
 	*	IEAD Camboriú - Igreja Evangélica Assembléia de Deus Camboriú
 	*	Autor:	-	Ailton Cardoso Júnior
 	*	
