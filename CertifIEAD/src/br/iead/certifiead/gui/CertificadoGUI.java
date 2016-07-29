@@ -1,5 +1,7 @@
 package br.iead.certifiead.gui;
 
+import br.iead.certifiead.modelo.Usuario;
+
 public class CertificadoGUI extends javax.swing.JFrame {
     
     public CertificadoGUI() {
@@ -30,6 +32,7 @@ public class CertificadoGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CertifIEAD - Sistema de Certificados IEAD - Início");
+        setResizable(false);
 
         table_Chamados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -102,6 +105,11 @@ public class CertificadoGUI extends javax.swing.JFrame {
         menu_Gerenciar.setText("Gerenciar");
 
         menuItem_Usuario.setText("Usuário");
+        menuItem_Usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItem_UsuarioActionPerformed(evt);
+            }
+        });
         menu_Gerenciar.add(menuItem_Usuario);
 
         menuItem_Programador.setText("Pastor");
@@ -137,6 +145,11 @@ public class CertificadoGUI extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menuItem_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItem_UsuarioActionPerformed
+        UsuarioGUI usuarioGUI = new UsuarioGUI(this, true);
+        usuarioGUI.setVisible(true);
+    }//GEN-LAST:event_menuItem_UsuarioActionPerformed
 
     public static void main(String args[]) {
 
