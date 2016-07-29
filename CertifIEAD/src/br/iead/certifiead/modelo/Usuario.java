@@ -5,7 +5,7 @@ package br.iead.certifiead.modelo;
  * @author Ailton Cardoso Jr
  */
 public class Usuario {
-    private String id;
+    private int id;
     private String nome;
     private String login;
     private String senha;
@@ -26,11 +26,11 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
