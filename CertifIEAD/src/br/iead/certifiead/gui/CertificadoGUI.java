@@ -59,8 +59,7 @@ public class CertificadoGUI extends javax.swing.JFrame {
         });
         scrollPane_Chamados.setViewportView(table_Chamados);
 
-        comboBox_Filtro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Concluidos", "Abertos", "Todos" }));
-        comboBox_Filtro.setSelectedIndex(2);
+        comboBox_Filtro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Impressos", "Não Impressos", "Todos" }));
 
         button_Excluir.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         button_Excluir.setText("Excluir");

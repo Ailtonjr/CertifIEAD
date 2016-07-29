@@ -39,6 +39,7 @@ public class LoginGUI extends javax.swing.JFrame {
         label_Titulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("CertifIEAD - Sistema de Certificados IEAD - Login");
         setResizable(false);
 
         label_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/iead/certifiead/gui/image/login.png"))); // NOI18N
