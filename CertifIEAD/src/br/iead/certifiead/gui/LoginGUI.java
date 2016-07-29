@@ -214,7 +214,7 @@ public class LoginGUI extends javax.swing.JFrame {
 
     private void login() {
         this.setVisible(false);
-        CertificadoGUI certificadoGUI = new CertificadoGUI();
+        inicioGUI certificadoGUI = new inicioGUI();
         certificadoGUI.setVisible(true);
     }
 }

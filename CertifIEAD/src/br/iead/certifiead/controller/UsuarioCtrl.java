@@ -1,13 +1,10 @@
 package br.iead.certifiead.controller;
 
 import br.iead.certifiead.dao.UsuarioDAO;
-import br.iead.certifiead.gui.UsuarioGUI;
 import br.iead.certifiead.modelo.Usuario;
 import java.awt.Component;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
