@@ -58,6 +58,13 @@ public class CertificadoGUI extends javax.swing.JDialog {
         label_NumIgreja = new javax.swing.JLabel();
         textField_LivroIgreja = new javax.swing.JTextField();
         label_LivroIgreja = new javax.swing.JLabel();
+        separator1 = new javax.swing.JSeparator();
+        label_Separador1 = new javax.swing.JLabel();
+        separator2 = new javax.swing.JSeparator();
+        label_Separador2 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        label_DataNascimento1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("CertifIEAD - Sistema de Certificados IEAD - Novo/Editar Certificado");
@@ -103,11 +110,11 @@ public class CertificadoGUI extends javax.swing.JDialog {
 
         textField_Pai.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
 
-        label_Pai.setText("Nome do pai");
+        label_Pai.setText("Nome do Pai");
 
         textField_Mae.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
 
-        label_Mae.setText("Nome da mãe");
+        label_Mae.setText("Nome da Mãe");
 
         textField_Cartorio.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
 
@@ -139,33 +146,65 @@ public class CertificadoGUI extends javax.swing.JDialog {
 
         label_LivroIgreja.setText("Livro Igreja");
 
+        separator1.setForeground(new java.awt.Color(153, 153, 153));
+        separator1.setToolTipText("");
+        separator1.setName(""); // NOI18N
+
+        label_Separador1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        label_Separador1.setForeground(new java.awt.Color(102, 102, 102));
+        label_Separador1.setText("Informaçoes do Cartório");
+
+        separator2.setForeground(new java.awt.Color(153, 153, 153));
+        separator2.setToolTipText("");
+        separator2.setName(""); // NOI18N
+
+        label_Separador2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        label_Separador2.setForeground(new java.awt.Color(102, 102, 102));
+        label_Separador2.setText("Informaçoes da Igreja");
+
+        jRadioButton1.setText("Masculino");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton2.setText("Feminino");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+
+        label_DataNascimento1.setText("Sexo");
+
         javax.swing.GroupLayout panel_PrincipalLayout = new javax.swing.GroupLayout(panel_Principal);
         panel_Principal.setLayout(panel_PrincipalLayout);
         panel_PrincipalLayout.setHorizontalGroup(
             panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_PrincipalLayout.createSequentialGroup()
-                .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_PrincipalLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(label_Separador)
-                        .addGap(13, 13, 13)
-                        .addComponent(separator, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panel_PrincipalLayout.createSequentialGroup()
-                        .addGap(570, 570, 570)
-                        .addComponent(label_Status))
-                    .addGroup(panel_PrincipalLayout.createSequentialGroup()
-                        .addGap(246, 246, 246)
-                        .addComponent(label_FolhaCartorio, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(panel_PrincipalLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_PrincipalLayout.createSequentialGroup()
-                        .addComponent(textField_Nome)
-                        .addContainerGap())
                     .addComponent(label_Nome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panel_PrincipalLayout.createSequentialGroup()
+                        .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(formatted_DataApresentação, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(label_DataApresentacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panel_PrincipalLayout.createSequentialGroup()
+                                .addComponent(comboBox_Apresentador, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(label_addApresentador))
+                            .addComponent(label_Apresentador, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(41, 41, 41))
+                    .addGroup(panel_PrincipalLayout.createSequentialGroup()
+                        .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_PrincipalLayout.createSequentialGroup()
+                                .addComponent(label_Separador2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(33, 33, 33)
+                                .addComponent(separator2, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textField_Nome)
                             .addComponent(label_Pai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(textField_Pai)
                             .addComponent(label_Mae, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -184,26 +223,6 @@ public class CertificadoGUI extends javax.swing.JDialog {
                                     .addComponent(textField_LivroCartorio, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(label_LivroCartorio, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(panel_PrincipalLayout.createSequentialGroup()
-                                .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(formatted_DataNascimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(label_DataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(panel_PrincipalLayout.createSequentialGroup()
-                                        .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(label_Cidade)
-                                            .addGroup(panel_PrincipalLayout.createSequentialGroup()
-                                                .addComponent(comboBox_Cidade, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(label_addCidade)))
-                                        .addGap(42, 42, 42)
-                                        .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(label_Estado)
-                                            .addGroup(panel_PrincipalLayout.createSequentialGroup()
-                                                .addComponent(comboBox_Estado, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(label_addEstado)))))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(panel_PrincipalLayout.createSequentialGroup()
                                 .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(button_Salvar)
                                     .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -215,20 +234,51 @@ public class CertificadoGUI extends javax.swing.JDialog {
                                     .addComponent(textField_LivroIgreja)
                                     .addGroup(panel_PrincipalLayout.createSequentialGroup()
                                         .addComponent(button_Imprimir)
-                                        .addGap(0, 0, Short.MAX_VALUE)))))
-                        .addContainerGap())
-                    .addGroup(panel_PrincipalLayout.createSequentialGroup()
-                        .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(formatted_DataApresentação, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(label_DataApresentacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(panel_PrincipalLayout.createSequentialGroup()
-                                .addComponent(comboBox_Apresentador, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(label_addApresentador))
-                            .addComponent(label_Apresentador))
-                        .addGap(20, 20, 20))))
+                                .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_PrincipalLayout.createSequentialGroup()
+                                            .addComponent(label_Separador1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGap(33, 33, 33)
+                                            .addComponent(separator1, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(panel_PrincipalLayout.createSequentialGroup()
+                                            .addComponent(label_Separador, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(13, 13, 13)
+                                            .addComponent(separator, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(panel_PrincipalLayout.createSequentialGroup()
+                                            .addGap(570, 570, 570)
+                                            .addComponent(label_Status))
+                                        .addGroup(panel_PrincipalLayout.createSequentialGroup()
+                                            .addGap(246, 246, 246)
+                                            .addComponent(label_FolhaCartorio, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(panel_PrincipalLayout.createSequentialGroup()
+                                        .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(label_Cidade)
+                                            .addGroup(panel_PrincipalLayout.createSequentialGroup()
+                                                .addComponent(comboBox_Cidade, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(label_addCidade))
+                                            .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(formatted_DataNascimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(label_DataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(panel_PrincipalLayout.createSequentialGroup()
+                                                .addGap(42, 42, 42)
+                                                .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(label_Estado)
+                                                    .addGroup(panel_PrincipalLayout.createSequentialGroup()
+                                                        .addComponent(comboBox_Estado, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(18, 18, 18)
+                                                        .addComponent(label_addEstado))
+                                                    .addComponent(label_DataNascimento1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(panel_PrincipalLayout.createSequentialGroup()
+                                                .addGap(34, 34, 34)
+                                                .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jRadioButton2)))))
+                                .addGap(0, 6, Short.MAX_VALUE)))
+                        .addContainerGap())))
         );
         panel_PrincipalLayout.setVerticalGroup(
             panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,19 +294,24 @@ public class CertificadoGUI extends javax.swing.JDialog {
                         .addGap(2, 2, 2)
                         .addComponent(label_Status)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label_DataApresentacao)
-                        .addGap(4, 4, 4)
-                        .addComponent(formatted_DataApresentação, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(label_DataApresentacao))
                     .addGroup(panel_PrincipalLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label_Apresentador)
-                        .addGap(3, 3, 3)
+                        .addComponent(label_Apresentador)))
+                .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel_PrincipalLayout.createSequentialGroup()
                         .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label_addApresentador)
                             .addGroup(panel_PrincipalLayout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(comboBox_Apresentador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(4, 4, 4)
+                                .addComponent(formatted_DataApresentação, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panel_PrincipalLayout.createSequentialGroup()
+                                .addGap(3, 3, 3)
+                                .addComponent(label_addApresentador)))
+                        .addGap(7, 7, 7))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_PrincipalLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(comboBox_Apresentador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(label_Nome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textField_Nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -274,10 +329,16 @@ public class CertificadoGUI extends javax.swing.JDialog {
                             .addComponent(label_addCidade)
                             .addComponent(comboBox_Estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(label_DataNascimento)
-                .addGap(4, 4, 4)
-                .addComponent(formatted_DataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
+                .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_DataNascimento)
+                    .addComponent(label_DataNascimento1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(formatted_DataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jRadioButton1)
+                        .addComponent(jRadioButton2)))
+                .addGap(11, 11, 11)
                 .addComponent(label_Pai)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textField_Pai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -285,7 +346,13 @@ public class CertificadoGUI extends javax.swing.JDialog {
                 .addComponent(label_Mae)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textField_Mae, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(17, 17, 17)
+                .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_Separador1)
+                    .addGroup(panel_PrincipalLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(separator1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(label_Cartorio)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textField_Cartorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -304,7 +371,13 @@ public class CertificadoGUI extends javax.swing.JDialog {
                             .addComponent(label_LivroCartorio))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(textField_FolhaCartorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_Separador2)
+                    .addGroup(panel_PrincipalLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(separator2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_NumIgreja)
                     .addComponent(label_LivroIgreja))
@@ -312,7 +385,7 @@ public class CertificadoGUI extends javax.swing.JDialog {
                 .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textField_NumIgreja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textField_LivroIgreja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                .addGap(20, 20, 20)
                 .addGroup(panel_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(button_Imprimir)
                     .addComponent(button_Salvar))
@@ -340,6 +413,14 @@ public class CertificadoGUI extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
     public static void main(String args[]) {
 
         /* Create and display the dialog */
@@ -365,11 +446,14 @@ public class CertificadoGUI extends javax.swing.JDialog {
     private javax.swing.JComboBox comboBox_Estado;
     private org.jdesktop.swingx.JXDatePicker formatted_DataApresentação;
     private org.jdesktop.swingx.JXDatePicker formatted_DataNascimento;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JLabel label_Apresentador;
     private javax.swing.JLabel label_Cartorio;
     private javax.swing.JLabel label_Cidade;
     private javax.swing.JLabel label_DataApresentacao;
     private javax.swing.JLabel label_DataNascimento;
+    private javax.swing.JLabel label_DataNascimento1;
     private javax.swing.JLabel label_Estado;
     private javax.swing.JLabel label_FolhaCartorio;
     private javax.swing.JLabel label_LivroCartorio;
@@ -380,12 +464,16 @@ public class CertificadoGUI extends javax.swing.JDialog {
     private javax.swing.JLabel label_NumIgreja;
     private javax.swing.JLabel label_Pai;
     private javax.swing.JLabel label_Separador;
+    private javax.swing.JLabel label_Separador1;
+    private javax.swing.JLabel label_Separador2;
     private javax.swing.JLabel label_Status;
     private javax.swing.JLabel label_addApresentador;
     private javax.swing.JLabel label_addCidade;
     private javax.swing.JLabel label_addEstado;
     private javax.swing.JPanel panel_Principal;
     private javax.swing.JSeparator separator;
+    private javax.swing.JSeparator separator1;
+    private javax.swing.JSeparator separator2;
     private javax.swing.JTextField textField_Cartorio;
     private javax.swing.JTextField textField_FolhaCartorio;
     private javax.swing.JTextField textField_LivroCartorio;

@@ -13,6 +13,7 @@ public class inicioGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jComboBox2 = new javax.swing.JComboBox();
+        imagePainter1 = new org.jdesktop.swingx.painter.ImagePainter();
         panel_Principal = new javax.swing.JPanel();
         scrollPane_Chamados = new javax.swing.JScrollPane();
         table_Chamados = new javax.swing.JTable();
@@ -21,9 +22,9 @@ public class inicioGUI extends javax.swing.JFrame {
         button_Novo = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         menu_Gerenciar = new javax.swing.JMenu();
-        menuItem_Chamado = new javax.swing.JMenuItem();
         menuItem_Usuario = new javax.swing.JMenuItem();
-        menuItem_Programador = new javax.swing.JMenuItem();
+        menuItem_Certificado = new javax.swing.JMenuItem();
+        menuItem_Apresentador = new javax.swing.JMenuItem();
         menu_Relatorio = new javax.swing.JMenu();
         menu_Sobre = new javax.swing.JMenu();
         menu_Sair = new javax.swing.JMenu();
@@ -104,15 +105,8 @@ public class inicioGUI extends javax.swing.JFrame {
 
         menu_Gerenciar.setText("Gerenciar");
 
-        menuItem_Chamado.setText("Certificado");
-        menuItem_Chamado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItem_ChamadoActionPerformed(evt);
-            }
-        });
-        menu_Gerenciar.add(menuItem_Chamado);
-
-        menuItem_Usuario.setText("Usuário");
+        menuItem_Usuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
+        menuItem_Usuario.setText("Usuários");
         menuItem_Usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuItem_UsuarioActionPerformed(evt);
@@ -120,8 +114,23 @@ public class inicioGUI extends javax.swing.JFrame {
         });
         menu_Gerenciar.add(menuItem_Usuario);
 
-        menuItem_Programador.setText("Pastor");
-        menu_Gerenciar.add(menuItem_Programador);
+        menuItem_Certificado.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, 0));
+        menuItem_Certificado.setText("Certificados");
+        menuItem_Certificado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItem_CertificadoActionPerformed(evt);
+            }
+        });
+        menu_Gerenciar.add(menuItem_Certificado);
+
+        menuItem_Apresentador.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F5, 0));
+        menuItem_Apresentador.setText("Apresentadores");
+        menuItem_Apresentador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItem_ApresentadorActionPerformed(evt);
+            }
+        });
+        menu_Gerenciar.add(menuItem_Apresentador);
 
         menuBar.add(menu_Gerenciar);
 
@@ -156,10 +165,15 @@ public class inicioGUI extends javax.swing.JFrame {
         usuarioGUI.setVisible(true);
     }//GEN-LAST:event_menuItem_UsuarioActionPerformed
 
-    private void menuItem_ChamadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItem_ChamadoActionPerformed
+    private void menuItem_CertificadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItem_CertificadoActionPerformed
         CertificadoGUI certificadoGUI = new CertificadoGUI(this, true);
         certificadoGUI.setVisible(true);
-    }//GEN-LAST:event_menuItem_ChamadoActionPerformed
+    }//GEN-LAST:event_menuItem_CertificadoActionPerformed
+
+    private void menuItem_ApresentadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItem_ApresentadorActionPerformed
+        ApresentadorGUI apresentadorGUI = new ApresentadorGUI(this, true);
+        apresentadorGUI.setVisible(true);
+    }//GEN-LAST:event_menuItem_ApresentadorActionPerformed
 
     public static void main(String args[]) {
 
@@ -174,10 +188,11 @@ public class inicioGUI extends javax.swing.JFrame {
     private javax.swing.JButton button_Excluir;
     private javax.swing.JButton button_Novo;
     private javax.swing.JComboBox comboBox_Filtro;
+    private org.jdesktop.swingx.painter.ImagePainter imagePainter1;
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JMenuItem menuItem_Chamado;
-    private javax.swing.JMenuItem menuItem_Programador;
+    private javax.swing.JMenuItem menuItem_Apresentador;
+    private javax.swing.JMenuItem menuItem_Certificado;
     private javax.swing.JMenuItem menuItem_Usuario;
     private javax.swing.JMenu menu_Gerenciar;
     private javax.swing.JMenu menu_Relatorio;
