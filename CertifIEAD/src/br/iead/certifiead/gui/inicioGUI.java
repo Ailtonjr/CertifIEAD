@@ -71,6 +71,11 @@ public class inicioGUI extends javax.swing.JFrame {
 
         button_Novo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         button_Novo.setText("Novo");
+        button_Novo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_NovoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_PrincipalLayout = new javax.swing.GroupLayout(panel_Principal);
         panel_Principal.setLayout(panel_PrincipalLayout);
@@ -174,6 +179,11 @@ public class inicioGUI extends javax.swing.JFrame {
         ApresentadorGUI apresentadorGUI = new ApresentadorGUI(this, true);
         apresentadorGUI.setVisible(true);
     }//GEN-LAST:event_menuItem_ApresentadorActionPerformed
+
+    private void button_NovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_NovoActionPerformed
+        CertificadoGUI certificadoGUI = new CertificadoGUI(this, true);
+        certificadoGUI.setVisible(true);
+    }//GEN-LAST:event_button_NovoActionPerformed
 
     public static void main(String args[]) {
 
