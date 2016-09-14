@@ -42,8 +42,6 @@ public class LoginGUI extends javax.swing.JFrame {
         setTitle("CertifIEAD - Sistema de Certificados IEAD - Login");
         setResizable(false);
 
-        label_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/iead/certifiead/gui/image/login.png"))); // NOI18N
-
         button_Cancelar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         button_Cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/iead/certifiead/gui/image/No.png"))); // NOI18N
         button_Cancelar.setText("Cancelar");

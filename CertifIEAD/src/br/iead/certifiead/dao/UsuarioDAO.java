@@ -7,7 +7,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -49,6 +48,15 @@ public class UsuarioDAO {
 
         preparedStatement.executeUpdate();
 
+    }
+    
+    public void remover(Usuario usuario) throws SQLException {
+        String sql = "BEGIN;"
+                + "DELETE FROM usuario WHERE id = '" + usuario.getId() + "';"
+                + "COMMIT";
+
+        preparedStatement = con.prepareStatement(sql);
+        preparedStatement.executeUpdate();
     }
 
     public ResultSet buscar(int id) throws SQLException {

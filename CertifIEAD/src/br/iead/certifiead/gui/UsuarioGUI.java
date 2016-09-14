@@ -9,6 +9,7 @@ import br.iead.certifiead.modelo.Usuario;
  */
 public class UsuarioGUI extends javax.swing.JDialog {
 
+    private Usuario usuarioSelecionado;
     private boolean editar;
     private int id;
     private UsuarioCtrl usuarioCtrl;
@@ -230,7 +231,10 @@ public class UsuarioGUI extends javax.swing.JDialog {
             field_Nome.setText(usuario.getNome());
             field_Login.setText(usuario.getLogin());
             field_Senha.setText(usuario.getSenha());
+            usuarioSelecionado = usuario;
             modificarBotoesConfirmar();
+            button_Excluir.setEnabled(true);
+            button_Editar.setEnabled(true);
         }
     }//GEN-LAST:event_table_UsuariosMouseClicked
 
@@ -240,15 +244,14 @@ public class UsuarioGUI extends javax.swing.JDialog {
         field_Nome.setText("");
         field_Login.setText("");
         field_Senha.setText("");
-        button_Confirmar.transferFocus();
     }//GEN-LAST:event_button_NovoActionPerformed
 
     private void button_ExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_ExcluirActionPerformed
-//        System.out.println("id "+ idSelecionado + " login " + loginSelecionado);
-//        con.removerUsuario(idSelecionado, loginSelecionado);
-//        modelo = consulta.geraTabelaUsuarios();
-//        table_Usuarios.setModel(modelo);
-//        button_Novo.doClick();
+        boolean commit = usuarioCtrl.remover(usuarioSelecionado);
+        if (commit) {
+            atualizarTabela();
+        }
+        button_Novo.doClick();
     }//GEN-LAST:event_button_ExcluirActionPerformed
 
     private void button_ConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_ConfirmarActionPerformed
@@ -260,12 +263,7 @@ public class UsuarioGUI extends javax.swing.JDialog {
             commit = usuarioCtrl.inserir(field_Nome.getText(), field_Login.getText(), field_Senha.getText());
         }
         if (commit) {
-            if (!editar) {
-                atualizarTabela();
-                table_Usuarios.setRowSelectionInterval(table_Usuarios.getRowCount() - 1, table_Usuarios.getRowCount() - 1);
-            } else {
-                atualizarTabela();
-            }
+            atualizarTabela();
             modificarBotoesConfirmar();
         }
     }//GEN-LAST:event_button_ConfirmarActionPerformed
@@ -281,12 +279,16 @@ public class UsuarioGUI extends javax.swing.JDialog {
 
     private void modificarBotoesConfirmar() {
         button_Novo.setEnabled(true);
-        button_Editar.setEnabled(true);
-        button_Excluir.setEnabled(true);
+        button_Editar.setEnabled(false);
+        button_Excluir.setEnabled(false);
         button_Confirmar.setEnabled(false);
         field_Nome.setEnabled(false);
         field_Login.setEnabled(false);
         field_Senha.setEnabled(false);
+        field_Nome.setText("");
+        field_Login.setText("");
+        field_Senha.setText("");
+        button_Novo.doClick();
     }
 
     private void modificarBotoesEditar() {

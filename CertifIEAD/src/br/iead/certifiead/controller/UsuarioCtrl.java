@@ -82,6 +82,18 @@ public class UsuarioCtrl {
         return null;
     }
 
+    public boolean remover(Usuario usuario) {
+        try {
+            dao.remover(usuario);
+            JOptionPane.showMessageDialog(aThis, "Usuário " + usuario.getNome() + " apagado com sucesso!");
+            return true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(aThis, "Erro ao apagar usuário: " + usuario.getNome() + "\n\n Causa: Usuário já existente", "Erro", JOptionPane.ERROR_MESSAGE);
+            ex.printStackTrace();
+        }
+        return false;
+    }
+
     public DefaultTableModel gerarTabela() {
         try {
             rs = dao.buscarUsuarios();
