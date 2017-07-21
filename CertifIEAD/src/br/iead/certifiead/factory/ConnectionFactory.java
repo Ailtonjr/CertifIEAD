@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class ConnectionFactory {
     // Parametros de Conexão
     private String url = "jdbc:postgresql://localhost:5432/db_certifiead";
-    private String usuario = "postgres";
+    private String usuario = "certifiead";
     private String senha = "123";
     private Connection conexao;
 
