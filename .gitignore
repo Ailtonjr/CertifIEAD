@@ -1,5 +1,7 @@
 *.class
 
+#Projeto criado por Ailton Cardoso Jr, João Felipe Gonçalves e Guilherme Gustavo Gohr
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
